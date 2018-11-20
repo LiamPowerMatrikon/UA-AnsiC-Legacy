@@ -7,6 +7,9 @@
 #include <openssl/err.h>
 #include <openssl/ssl.h>
 #include <openssl/ec.h>
+#include <openssl/ecdsa.h>
+#include <openssl/bn.h>
+#include <openssl/x509.h>
 #include <memory.h>
 
 using namespace msclr::interop;
@@ -219,10 +222,7 @@ bool VerifySignature(
 		return false;
 	}
 
-	BN_free(pEcSignature->r);
-	BN_free(pEcSignature->s);
-	pEcSignature->r = r;
-	pEcSignature->s = s;
+  ECDSA_SIG_set0(pEcSignature, r, s);
 
 	unsigned char digest[SHA256_DIGEST_LENGTH];
 
@@ -273,7 +273,7 @@ bool CreateSignature(
 		return false;
 	}
 
-	auto pEcSignature = ECDSA_do_sign(digest, SHA256_DIGEST_LENGTH, pEcPrivateKey);
+  auto pEcSignature = ECDSA_do_sign(digest, SHA256_DIGEST_LENGTH, pEcPrivateKey);
 
 	if (pEcSignature == nullptr)
 	{
@@ -294,8 +294,8 @@ bool CreateSignature(
 	pSignature->Length = keySize * 2;
 	pSignature->Data = new unsigned char[pSignature->Length];
 
-	bn2bin_pad(pEcSignature->r, pSignature->Data, keySize);
-	bn2bin_pad(pEcSignature->s, pSignature->Data + keySize, keySize);
+	BN_bn2binpad(ECDSA_SIG_get0_r(pEcSignature), pSignature->Data, keySize);
+	BN_bn2binpad(ECDSA_SIG_get0_s(pEcSignature), pSignature->Data + keySize, keySize);
 
 	ECDSA_SIG_free(pEcSignature);
 	EC_KEY_free(pEcPrivateKey);
