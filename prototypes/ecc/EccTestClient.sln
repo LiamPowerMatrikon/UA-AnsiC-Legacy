@@ -3,24 +3,50 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EccTestClient", "EccTestClient\EccTestClient.csproj", "{D0FEB9DF-4C71-4EEA-B9F2-1D39EC07553F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcxTestClient", "EccTestClient\EcxTestClient.csproj", "{D0FEB9DF-4C71-4EEA-B9F2-1D39EC07553F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EccOpenSsl", "EccOpenSsl\EccOpenSsl.vcxproj", "{C0109CB3-BA15-482B-A3E9-FDD29E8A27F6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EcxOpenSsl", "EccOpenSsl\EccOpenSsl.vcxproj", "{C0109CB3-BA15-482B-A3E9-FDD29E8A27F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BouncyCastle", "..\..\..\BouncyCastle\crypto\BouncyCastle.csproj", "{4C235092-820C-4DEB-9074-D356FB797D8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "..\..\..\BouncyCastle\crypto\test\UnitTests.csproj", "{D4EB669D-7C88-48C0-A480-C5CC73A7369B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0FEB9DF-4C71-4EEA-B9F2-1D39EC07553F}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{D0FEB9DF-4C71-4EEA-B9F2-1D39EC07553F}.Debug|x86.ActiveCfg = Debug|x86
 		{D0FEB9DF-4C71-4EEA-B9F2-1D39EC07553F}.Debug|x86.Build.0 = Debug|x86
+		{D0FEB9DF-4C71-4EEA-B9F2-1D39EC07553F}.Release|Any CPU.ActiveCfg = Release|x86
 		{D0FEB9DF-4C71-4EEA-B9F2-1D39EC07553F}.Release|x86.ActiveCfg = Release|x86
 		{D0FEB9DF-4C71-4EEA-B9F2-1D39EC07553F}.Release|x86.Build.0 = Release|x86
+		{C0109CB3-BA15-482B-A3E9-FDD29E8A27F6}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{C0109CB3-BA15-482B-A3E9-FDD29E8A27F6}.Debug|x86.ActiveCfg = Debug|Win32
 		{C0109CB3-BA15-482B-A3E9-FDD29E8A27F6}.Debug|x86.Build.0 = Debug|Win32
+		{C0109CB3-BA15-482B-A3E9-FDD29E8A27F6}.Release|Any CPU.ActiveCfg = Release|Win32
 		{C0109CB3-BA15-482B-A3E9-FDD29E8A27F6}.Release|x86.ActiveCfg = Release|Win32
 		{C0109CB3-BA15-482B-A3E9-FDD29E8A27F6}.Release|x86.Build.0 = Release|Win32
+		{4C235092-820C-4DEB-9074-D356FB797D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C235092-820C-4DEB-9074-D356FB797D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C235092-820C-4DEB-9074-D356FB797D8B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4C235092-820C-4DEB-9074-D356FB797D8B}.Debug|x86.Build.0 = Debug|Any CPU
+		{4C235092-820C-4DEB-9074-D356FB797D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C235092-820C-4DEB-9074-D356FB797D8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C235092-820C-4DEB-9074-D356FB797D8B}.Release|x86.ActiveCfg = Release|Any CPU
+		{4C235092-820C-4DEB-9074-D356FB797D8B}.Release|x86.Build.0 = Release|Any CPU
+		{D4EB669D-7C88-48C0-A480-C5CC73A7369B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4EB669D-7C88-48C0-A480-C5CC73A7369B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4EB669D-7C88-48C0-A480-C5CC73A7369B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D4EB669D-7C88-48C0-A480-C5CC73A7369B}.Debug|x86.Build.0 = Debug|Any CPU
+		{D4EB669D-7C88-48C0-A480-C5CC73A7369B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4EB669D-7C88-48C0-A480-C5CC73A7369B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4EB669D-7C88-48C0-A480-C5CC73A7369B}.Release|x86.ActiveCfg = Release|Any CPU
+		{D4EB669D-7C88-48C0-A480-C5CC73A7369B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
